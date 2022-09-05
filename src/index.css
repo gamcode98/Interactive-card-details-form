@@ -1,0 +1,291 @@
+:root {
+  --red: hsl(0, 100%, 66%); /* (input errors) */
+  --gradient: (
+    0deg,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  ); /* (active input border) */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+
+.bg-cards {
+  background-image: url("./assets/images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 220px;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .bg-cards {
+    background-size: 100% 320px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bg-cards {
+    background-image: url("./assets/images/bg-main-desktop.png");
+    width: 50%;
+    height: 100vh;
+    background-size: 75% 100%;
+    margin-bottom: initial;
+  }
+}
+
+.card {
+  width: 100%;
+  display: block;
+}
+
+.card-container {
+  width: 70%;
+  margin: 0;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .card-container {
+    width: 50%;
+  }
+}
+
+.card-container.back {
+  transform: translateY(20%);
+  left: 25%;
+}
+
+@media screen and (min-width: 768px) {
+  .card-container.back {
+    left: 35%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-container.back {
+    left: 50%;
+    bottom: -50%;
+  }
+}
+
+.card-container.front {
+  transform: translateY(-25%);
+  left: 5%;
+}
+
+@media screen and (min-width: 768px) {
+  .card-container.front {
+    left: 15%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-container.front {
+    left: 40%;
+  }
+}
+
+.card.card-back {
+  position: relative;
+}
+
+.card-back-numbers {
+  position: absolute;
+  color: var(--white);
+  right: 12%;
+  font-size: 0.7rem;
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 1;
+}
+
+.card-logo {
+  position: absolute;
+  width: 3rem;
+  top: 1rem;
+  left: 1rem;
+}
+
+.card-front-numbers {
+  color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.card-details {
+  position: absolute;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  justify-content: space-between;
+  right: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  color: var(--white);
+}
+
+/* form */
+
+.form-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.form-container form {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .form-container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-container {
+    width: 30%;
+  }
+}
+
+label,
+.exp-date {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--very-dark-violet);
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.exp-date,
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--light-grayish-violet);
+}
+
+input[type="submit"] {
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group.last-inputs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mm-yy {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.exp-date-container {
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .cvc-container {
+    width: 50%;
+  }
+}
+
+/* Error msg */
+
+.error-msg {
+  color: var(--red);
+  font-size: 0.8rem;
+}
+
+/* Loeader */
+
+.btn-loader {
+  border: none;
+  background-color: var(--very-dark-violet);
+  padding: 0.7rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Success result */
+
+.success-result {
+  text-align: center;
+}
+
+.icon-complete {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.success-result.title {
+  text-transform: uppercase;
+  color: var(--very-dark-violet);
+  letter-spacing: 0.3rem;
+}
+
+.success-result.paraph {
+  color: var(--dark-grayish-violet);
+  margin-bottom: 2rem;
+}
+
+.success-result.btn {
+  background-color: var(--very-dark-violet);
+  border: none;
+  color: var(--white);
+  padding: 0.7rem;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.attribution {
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .attribution {
+    position: fixed;
+    bottom: 1rem;
+  }
+}
